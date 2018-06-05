@@ -103,9 +103,10 @@ angular.module("offsetapp.directives", [])
 						rangeSelector: {
 							inputEnabled: false,
 							buttons: [{
-								type: 'all',
-								text: 'All'
-							}, {
+								type: 'minute',
+								count: 1,
+								text: '1m'
+							},{
 								type: 'minute',
 								count: 5,
 								text: '5m'
@@ -130,9 +131,8 @@ angular.module("offsetapp.directives", [])
 								count: 5,
 								text: '5d'
 							},{
-								type: 'minute',
-								count: 1,
-								text: '1m'
+								type: 'all',
+								text: 'All'
 							}]
 						},
 						legend : {
