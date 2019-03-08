@@ -66,7 +66,7 @@ class KafkaOffsetGetter(zkUtilsWrapper: ZkUtilsWrapper, args: OffsetGetterArgs) 
 		)
 
 		if (!isActiveGroup) {
-			info(s"processPartition: Not reporting offset because group is not active, g:$group,t:$topic,p:$partitionId")
+			//info(s"processPartition: Not reporting offset because group is not active, g:$group,t:$topic,p:$partitionId")
 			return None
 		}
 
@@ -369,7 +369,7 @@ object KafkaOffsetGetter extends Logging {
 							val partition: Long = gtp.topicPartition.partition
 							val offset: Long = offsetAndMetadata.offset
 
-							info(s"Updating committed offset: g:$group,t:$topic,p:$partition: $offset")
+							info(s"Updating committed offset: group:$group,topic:$topic,partition:$partition,offset:$offset")
 							committedOffsetMap += messageOffsetMap
 						}
 					}
